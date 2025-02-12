@@ -17,7 +17,7 @@ Version Control: Git & GitHub
 ⚙️ Installation & Setup
 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/code-audit-review.git
+git clone https://github.com/NavinMalakar2/Code-Audit-With-AI.git
 cd code-audit-review
 
 2️⃣ Install Dependencies
