@@ -1,16 +1,17 @@
+
+/* ✅ Global Styles */
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   height: 100%;
   width: 100%;
 }
 
+/* ✅ Main Layout */
 main {
   height: 100%;
   width: 100%;
@@ -19,22 +20,21 @@ main {
   gap: 1rem;
 }
 
-main .left,
-main .right {
+/* ✅ Left & Right Panels */
+main .left, main .right {
   height: 100%;
   flex-basis: 50%;
   border-radius: 0.7rem;
 }
 
+/* ✅ Left Panel (Code Editor) */
 main .left {
   background-color: #000000;
   position: relative;
   color: white;
 }
 
-.left .code,
-.code pre,
-.code pre code {
+.left .code, .code pre, .code pre code {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -42,6 +42,7 @@ main .left {
   background-color: #0c0c0c;
 }
 
+/* ✅ Review Button */
 main .left .review {
   position: absolute;
   bottom: 1rem;
@@ -53,13 +54,64 @@ main .left .review {
   cursor: pointer;
   user-select: none;
   border-radius: 0.7rem;
+  transition: background 0.3s ease;
 }
 
+.review:hover {
+  background-color: rgb(180, 180, 255);
+}
 
+/* ✅ Right Panel (Review Output) */
 main .right {
   background-color: #201f1f;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   color: aliceblue;
   overflow: auto;
+}
+
+/* ✅ Loading Text */
+.loading-text {
+  font-size: 16px;
+  color: #ff9800;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ✅ Responsive Design */
+
+/* 📌 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column-reverse; /* Stack items vertically */
+    padding: 10px;
+  }
+
+  main .left, main .right {
+    width: 100%;
+    flex-basis: auto;
+    height: 50vh; /* Each section takes half screen */
+  }
+
+  main .right {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .review {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* 📌 Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column-reverse;
+  }
+
+  main .left, main .right {
+    width: 100%;
+  }
 }
